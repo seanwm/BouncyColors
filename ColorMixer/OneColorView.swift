@@ -10,9 +10,24 @@ import Foundation
 import UIKit
 
 class OneColorView : UIView {
-    
-    func getCollisionBoundsType()->UIDynamicItemCollisionBoundsType
+    var myBezierPath : UIBezierPath!
+
+    /*override var collisionBoundingPath: UIBezierPath
     {
-        return UIDynamicItemCollisionBoundsType.ellipse;
+        get{
+            if (myBezierPath == nil)
+            {
+                myBezierPath = UIBezierPath(arcCenter: CGPoint(x:self.bounds.width/2.0, y:self.bounds.height/2.0), radius: (self.frame.width / 2.0) - 1.0, startAngle: 0, endAngle: CGFloat(2.0) * CGFloat.pi, clockwise: true)
+            }
+            return myBezierPath;
+        }
+    }*/
+    
+    override var collisionBoundsType: UIDynamicItemCollisionBoundsType
+    {
+        get{
+                return UIDynamicItemCollisionBoundsType.ellipse;
+        }
     }
+
 }

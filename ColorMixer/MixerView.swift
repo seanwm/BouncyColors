@@ -11,12 +11,12 @@ import UIKit
 
 class MixerView : UIView {
     
-    var myBezierPath : UIBezierPath!
+    /*var myBezierPath : UIBezierPath!
     
     override func awakeFromNib() {
-        myBezierPath = UIBezierPath(arcCenter: CGPoint(x:self.bounds.width/2.0, y:self.bounds.height/2.0), radius: 195, startAngle: 0, endAngle: CGFloat(2.0) * CGFloat.pi, clockwise: true)
+        myBezierPath = UIBezierPath(arcCenter: CGPoint(x:self.bounds.width/2.0, y:self.bounds.height/2.0), radius: (self.frame.width / 2.0) - 4.0, startAngle: 0, endAngle: CGFloat(2.0) * CGFloat.pi, clockwise: true)
 
-    }
+    }*/
     
     /*override func draw(_ rect: CGRect) {
         let myBezier = UIBezierPath()
@@ -33,14 +33,20 @@ class MixerView : UIView {
         UIColor.blue.setFill()
         myBezierPath.stroke()
     }*/
-    
+    /*
     func getCollisionBoundingPath()->UIBezierPath
     {
         return myBezierPath;
+    }*/
+    override var collisionBoundsType: UIDynamicItemCollisionBoundsType
+        {
+        get{
+            return UIDynamicItemCollisionBoundsType.ellipse;
+        }
     }
-    
-    func getCollisionBoundsType()->UIDynamicItemCollisionBoundsType
+
+/*    func getCollisionBoundsType()->UIDynamicItemCollisionBoundsType
     {
         return UIDynamicItemCollisionBoundsType.path;
-    }
+    }*/
     }
