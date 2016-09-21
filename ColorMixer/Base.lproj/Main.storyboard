@@ -182,6 +182,7 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="94p-bC-RSv" appends="YES" id="TMN-JE-C6t"/>
+                                    <outletCollection property="gestureRecognizers" destination="b7d-yv-MsD" appends="YES" id="WxC-HO-K0W"/>
                                 </connections>
                             </view>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJx-SG-PCh" userLabel="Orange View">
@@ -220,6 +221,15 @@
                                     <outletCollection property="gestureRecognizers" destination="I3D-Qn-BbX" appends="YES" id="fR5-ZU-gcH"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RD-Jp-Fof">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="IN8-ZW-PzU"/>
+                                    <constraint firstAttribute="width" constant="320" id="Olz-DR-NVL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -232,6 +242,7 @@
                             <constraint firstAttribute="trailing" secondItem="OAR-Dy-f6Y" secondAttribute="trailing" constant="20" id="Ks8-aS-XiE"/>
                             <constraint firstItem="Qle-z8-dEy" firstAttribute="height" secondItem="OAR-Dy-f6Y" secondAttribute="height" id="LOJ-bA-3DT"/>
                             <constraint firstItem="zJx-SG-PCh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="OyN-bA-WJo"/>
+                            <constraint firstItem="3RD-Jp-Fof" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pri-jV-JDp"/>
                             <constraint firstItem="OAR-Dy-f6Y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="QmR-rT-1My"/>
                             <constraint firstItem="fgC-y4-qzK" firstAttribute="height" secondItem="OAR-Dy-f6Y" secondAttribute="height" id="SzX-8t-9Uj"/>
                             <constraint firstItem="PAQ-Jj-KQH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Uac-Gl-shQ"/>
@@ -241,6 +252,7 @@
                             <constraint firstItem="sHV-Gp-5vz" firstAttribute="height" secondItem="OAR-Dy-f6Y" secondAttribute="height" id="b6a-Lb-u0G"/>
                             <constraint firstItem="PyW-qp-BDm" firstAttribute="height" secondItem="OAR-Dy-f6Y" secondAttribute="height" id="c89-MK-XcC"/>
                             <constraint firstAttribute="trailing" secondItem="PAQ-Jj-KQH" secondAttribute="trailing" constant="20" id="cNv-TH-c6T"/>
+                            <constraint firstItem="3RD-Jp-Fof" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="doR-7U-azn"/>
                             <constraint firstItem="tTR-NF-fSO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ePg-Yv-ZEZ"/>
                             <constraint firstItem="PyW-qp-BDm" firstAttribute="height" secondItem="OAR-Dy-f6Y" secondAttribute="height" id="f5V-II-cTA"/>
                             <constraint firstItem="iMm-cz-bLQ" firstAttribute="height" secondItem="OAR-Dy-f6Y" secondAttribute="height" id="gHb-cU-oQN"/>
@@ -289,6 +301,7 @@
                         <outlet property="blackView" destination="VIk-kl-qwh" id="7mZ-rr-3wc"/>
                         <outlet property="blueView" destination="sHV-Gp-5vz" id="RW3-Vf-Jby"/>
                         <outlet property="brownView" destination="4MI-ib-Rxx" id="DeI-ab-WSn"/>
+                        <outlet property="colorNameLabel" destination="3RD-Jp-Fof" id="Uyd-qf-Ugi"/>
                         <outlet property="greenView" destination="iMm-cz-bLQ" id="B4I-5b-ufi"/>
                         <outlet property="greyView" destination="fgC-y4-qzK" id="avC-1F-eMb"/>
                         <outlet property="indigoView" destination="Qle-z8-dEy" id="Hwp-V2-jms"/>
@@ -370,6 +383,11 @@
                         <action selector="touchColorWithSender:" destination="BYZ-38-t0r" id="ULT-Dk-RXz"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="b7d-yv-MsD">
+                    <connections>
+                        <action selector="longPresshMixerWithSender:" destination="BYZ-38-t0r" id="6Qc-o7-4eF"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.109375" y="121.875"/>
         </scene>

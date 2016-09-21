@@ -15,30 +15,117 @@ import UIKit
 
 class ColorHelper
 {
+    /*let newColors : [String:[Int]] =
+    [
+        "Red-Orange" : [255, 83, 73],
+        "Orange-Red" : [255, 69, 0],
+        "Orange-Yellow" : [248, 213, 104],
+        "Yellow-Orange" : [255, 174, 66],
+        "Yellow-Green" : [154, 205, 50],
+        "Green-Yellow" : [173, 255, 47],
+        "Green-Blue"    : [17, 100, 180],
+        "Blue-Green"    : [13, 152, 186],
+        "Blue-Violet"   : [138, 43, 226],
+        "Violet-Blue"   : [50,74,178]
+    ]*/
     
     let names : [MatchingColor] =
 [
+    MatchingColor(hexValue: "000000", name: "Black", redComponent: 0.0, greenComponent: 0.0, blueComponent: 0.0, hueComponent: 0.0, saturationComponent: 0.0, brightnessComponent: 0.0, lComponent: 0.0, aComponent: 0.0, bComponent: 0.0),
+    MatchingColor(hexValue: "0000FF", name: "Blue", redComponent: 0.0, greenComponent: 0.0, blueComponent: 255.0, hueComponent: 170.0, saturationComponent: 255.0, brightnessComponent: 127.0, lComponent: 32.3026, aComponent: 79.1967, bComponent: -107.864),
+    MatchingColor(hexValue: "008080", name: "Teal", redComponent: 0.0, greenComponent: 128.0, blueComponent: 128.0, hueComponent: 127.0, saturationComponent: 255.0, brightnessComponent: 64.0, lComponent: 48.2561, aComponent: -28.8416, bComponent: -8.48105),
+    MatchingColor(hexValue: "00FF00", name: "Green", redComponent: 0.0, greenComponent: 255.0, blueComponent: 0.0, hueComponent: 85.0, saturationComponent: 255.0, brightnessComponent: 127.0, lComponent: 87.737, aComponent: -86.1847, bComponent: 83.1812),
+    MatchingColor(hexValue: "483C32", name: "Taupe", redComponent: 72.0, greenComponent: 60.0, blueComponent: 50.0, hueComponent: 19.0, saturationComponent: 45.0, brightnessComponent: 60.0, lComponent: 26.2732, aComponent: 3.42186, bComponent: 8.13116),
+    MatchingColor(hexValue: "660099", name: "Purple", redComponent: 102.0, greenComponent: 0.0, blueComponent: 153.0, hueComponent: 198.0, saturationComponent: 255.0, brightnessComponent: 76.0, lComponent: 27.0871, aComponent: 59.6231, bComponent: -56.6219),
+    MatchingColor(hexValue: "800000", name: "Maroon", redComponent: 128.0, greenComponent: 0.0, blueComponent: 0.0, hueComponent: 0.0, saturationComponent: 255.0, brightnessComponent: 64.0, lComponent: 25.5308, aComponent: 48.0553, bComponent: 38.0596),
+    MatchingColor(hexValue: "808000", name: "Olive", redComponent: 128.0, greenComponent: 128.0, blueComponent: 0.0, hueComponent: 42.0, saturationComponent: 255.0, brightnessComponent: 64.0, lComponent: 51.8683, aComponent: -12.9308, bComponent: 56.6773),
+    MatchingColor(hexValue: "D3D3D3", name: "Light Gray", redComponent: 211.0, greenComponent: 211.0, blueComponent: 211.0, hueComponent: 0.0, saturationComponent: 0.0, brightnessComponent: 212.0, lComponent: 84.5561, aComponent: 0.00458956, bComponent: -0.00902414),
+    MatchingColor(hexValue: "808080", name: "Gray", redComponent: 128.0, greenComponent: 128.0, blueComponent: 128.0, hueComponent: 0.0, saturationComponent: 0.0, brightnessComponent: 128.0, lComponent: 53.585, aComponent: 0.00312924, bComponent: -0.00623465),
+    MatchingColor(hexValue: "444444", name: "Dark Gray", redComponent: 68.0, greenComponent: 68.0, blueComponent: 68.0, hueComponent: 0.0, saturationComponent: 0.0, brightnessComponent: 69.0, lComponent: 28.8519, aComponent: 0.00204146, bComponent: -0.00402927),
+    MatchingColor(hexValue: "900020", name: "Burgundy", redComponent: 144.0, greenComponent: 0.0, blueComponent: 32.0, hueComponent: -9.0, saturationComponent: 255.0, brightnessComponent: 72.0, lComponent: 29.497, aComponent: 53.0578, bComponent: 26.4665),
+    MatchingColor(hexValue: "964B00", name: "Brown", redComponent: 150.0, greenComponent: 75.0, blueComponent: 0.0, hueComponent: 21.0, saturationComponent: 255.0, brightnessComponent: 75.0, lComponent: 40.4366, aComponent: 27.502, bComponent: 50.147),
+    MatchingColor(hexValue: "E6E6FA", name: "Lavender", redComponent: 230.0, greenComponent: 230.0, blueComponent: 250.0, hueComponent: 240.0, saturationComponent: 20.0, brightnessComponent: 250.0, lComponent: 91.8277, aComponent: 3.71385, bComponent: -9.67168),
+    MatchingColor(hexValue: "CC8899", name: "Puce", redComponent: 204.0, greenComponent: 136.0, blueComponent: 153.0, hueComponent: -10.0, saturationComponent: 102.0, brightnessComponent: 170.0, lComponent: 63.9544, aComponent: 28.3563, bComponent: 1.66506),
+    MatchingColor(hexValue: "D2B48C", name: "Tan", redComponent: 210.0, greenComponent: 180.0, blueComponent: 140.0, hueComponent: 24.0, saturationComponent: 111.0, brightnessComponent: 175.0, lComponent: 74.9745, aComponent: 5.02381, bComponent: 24.4215),
+    MatchingColor(hexValue: "E0B0FF", name: "Mauve", redComponent: 224.0, greenComponent: 176.0, blueComponent: 255.0, hueComponent: 195.0, saturationComponent: 255.0, brightnessComponent: 215.0, lComponent: 78.5305, aComponent: 31.5059, bComponent: -32.4948),
+    MatchingColor(hexValue: "F0E68C", name: "Khaki", redComponent: 240.0, greenComponent: 230.0, blueComponent: 140.0, hueComponent: 38.0, saturationComponent: 196.0, brightnessComponent: 190.0, lComponent: 90.3273, aComponent: -9.00903, bComponent: 44.9741),
+    MatchingColor(hexValue: "F5F5DC", name: "Beige", redComponent: 245.0, greenComponent: 245.0, blueComponent: 220.0, hueComponent: 42.0, saturationComponent: 141.0, brightnessComponent: 232.0, lComponent: 95.9489, aComponent: -4.18907, bComponent: 12.0399),
+    MatchingColor(hexValue: "FCD667", name: "Goldenrod", redComponent: 252.0, greenComponent: 214.0, blueComponent: 103.0, hueComponent: 31.0, saturationComponent: 245.0, brightnessComponent: 177.0, lComponent: 86.8829, aComponent: 0.728607, bComponent: 58.6433),
+    MatchingColor(hexValue: "FF0000", name: "Red", redComponent: 255.0, greenComponent: 0.0, blueComponent: 0.0, hueComponent: 0.0, saturationComponent: 255.0, brightnessComponent: 127.0, lComponent: 53.2329, aComponent: 80.1094, bComponent: 67.2201),
+    MatchingColor(hexValue: "FF681F", name: "Orange", redComponent: 255.0, greenComponent: 104.0, blueComponent: 31.0, hueComponent: 13.0, saturationComponent: 255.0, brightnessComponent: 143.0, lComponent: 62.7261, aComponent: 54.4676, bComponent: 64.6804),
+    MatchingColor(hexValue: "FFC0CB", name: "Pink", redComponent: 255.0, greenComponent: 192.0, blueComponent: 203.0, hueComponent: -7.0, saturationComponent: 255.0, brightnessComponent: 223.0, lComponent: 83.5848, aComponent: 24.1497, bComponent: 3.31539),
+    MatchingColor(hexValue: "FFD700", name: "Gold", redComponent: 255.0, greenComponent: 215.0, blueComponent: 0.0, hueComponent: 35.0, saturationComponent: 255.0, brightnessComponent: 127.0, lComponent: 86.9286, aComponent: -1.92425, bComponent: 87.1372),
+    MatchingColor(hexValue: "FFE5B4", name: "Peach", redComponent: 255.0, greenComponent: 229.0, blueComponent: 180.0, hueComponent: 27.0, saturationComponent: 255.0, brightnessComponent: 217.0, lComponent: 91.9507, aComponent: 1.80602, bComponent: 27.1778),
+    MatchingColor(hexValue: "FFFDD0", name: "Cream", redComponent: 255.0, greenComponent: 253.0, blueComponent: 208.0, hueComponent: 40.0, saturationComponent: 255.0, brightnessComponent: 231.0, lComponent: 98.4579, aComponent: -6.48984, bComponent: 21.8239),
+    MatchingColor(hexValue: "FFFF00", name: "Yellow", redComponent: 255.0, greenComponent: 255.0, blueComponent: 0.0, hueComponent: 42.0, saturationComponent: 255.0, brightnessComponent: 127.0, lComponent: 97.1382, aComponent: -21.5559, bComponent: 94.4825),
+    MatchingColor(hexValue: "FFFFFF", name: "White", redComponent: 255.0, greenComponent: 255.0, blueComponent: 255.0, hueComponent: 0.0, saturationComponent: 0.0, brightnessComponent: 255.0, lComponent: 100.0, aComponent: 0.00524521, bComponent: -0.0104189),
+    // Green-Yellow
+    MatchingColor(hexValue: "", name: "Greenish Yellow", redComponent: 173, greenComponent: 255, blueComponent: 47, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: 91.9576, aComponent: -52.4838, bComponent: 81.866),
+    // Orange-Yellow
+//    MatchingColor(hexValue: "", name: "Orangy Yellow", redComponent: 248, greenComponent: 213, blueComponent: 104, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: 86.278, aComponent: -0.327498, bComponent: 57.4013),
+    // Red-Orange
+    MatchingColor(hexValue: "", name: "Redish Orange", redComponent: 255, greenComponent: 83, blueComponent: 73, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: 59.8232, aComponent: 64.4144, bComponent: 42.6703),
+    //MatchingColor(hexValue: "", name: "Green-Blue", redComponent: 17, greenComponent: 100, blueComponent: 180, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: 42.0445, aComponent: 7.59873, bComponent: -48.8011),
+    // violet-blue
+    MatchingColor(hexValue: "", name: "Blue", redComponent: 50, greenComponent: 74, blueComponent: 178, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: 35.5768, aComponent: 27.1179, bComponent: -58.0297),
+    // blue-green
+    //MatchingColor(hexValue: "", name: "Green", redComponent: 13, greenComponent: 152, blueComponent: 186, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: 58.1197, aComponent: -20.8174, bComponent: -26.9405),
+    // Blue-Violet
+    MatchingColor(hexValue: "", name: "Violet", redComponent: 138, greenComponent: 43, blueComponent: 226, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: 42.1881, aComponent: 69.8581, bComponent: -74.7742),
+    // orange-red
+    MatchingColor(hexValue: "", name: "Red", redComponent: 255, greenComponent: 69, blueComponent: 0, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: 57.575, aComponent: 67.7955, bComponent: 68.9714),
+    //yellow-orange:
+    MatchingColor(hexValue: "", name: "Orange", redComponent: 255, greenComponent: 174, blueComponent: 66, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: 77.2362, aComponent: 20.6509, bComponent: 64.4551),
+    // yellow-green:
+    MatchingColor(hexValue: "", name: "Green", redComponent: 154, greenComponent: 205, blueComponent: 50, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: 76.5352, aComponent: -37.9902, bComponent: 66.5863),
+    /*
     MatchingColor(hexValue: "000000", name: "Black", redComponent: 0, greenComponent: 0, blueComponent: 0, hueComponent: 0, saturationComponent: 0, brightnessComponent: 0),
+    MatchingColor(hexValue: "0000FF", name: "Blue", redComponent: 0, greenComponent: 0, blueComponent: 255, hueComponent: 170, saturationComponent: 255, brightnessComponent: 127),
+    MatchingColor(hexValue: "008080", name: "Teal", redComponent: 0, greenComponent: 128, blueComponent: 128, hueComponent: 127, saturationComponent: 255, brightnessComponent: 64),
+    MatchingColor(hexValue: "00FF00", name: "Green", redComponent: 0, greenComponent: 255, blueComponent: 0, hueComponent: 85, saturationComponent: 255, brightnessComponent: 127),
+    MatchingColor(hexValue: "483C32", name: "Taupe", redComponent: 72, greenComponent: 60, blueComponent: 50, hueComponent: 19, saturationComponent: 45, brightnessComponent: 60),
+    MatchingColor(hexValue: "660099", name: "Purple", redComponent: 102, greenComponent: 0, blueComponent: 153, hueComponent: 198, saturationComponent: 255, brightnessComponent: 76),
+    MatchingColor(hexValue: "800000", name: "Maroon", redComponent: 128, greenComponent: 0, blueComponent: 0, hueComponent: 0, saturationComponent: 255, brightnessComponent: 64),
+    MatchingColor(hexValue: "808000", name: "Olive", redComponent: 128, greenComponent: 128, blueComponent: 0, hueComponent: 42, saturationComponent: 255, brightnessComponent: 64),
+    MatchingColor(hexValue: "D3D3D3", name: "Light Gray", redComponent: 211, greenComponent: 211, blueComponent: 211, hueComponent: 0, saturationComponent: 0, brightnessComponent: 212),
+    MatchingColor(hexValue: "808080", name: "Gray", redComponent: 128, greenComponent: 128, blueComponent: 128, hueComponent: 0, saturationComponent: 0, brightnessComponent: 128),
+    MatchingColor(hexValue: "444444", name: "Dark Gray", redComponent: 68, greenComponent: 68, blueComponent: 68, hueComponent: 0, saturationComponent: 0, brightnessComponent: 69),
+    MatchingColor(hexValue: "900020", name: "Burgundy", redComponent: 144, greenComponent: 0, blueComponent: 32, hueComponent: -9, saturationComponent: 255, brightnessComponent: 72),
+    MatchingColor(hexValue: "964B00", name: "Brown", redComponent: 150, greenComponent: 75, blueComponent: 0, hueComponent: 21, saturationComponent: 255, brightnessComponent: 75),
+    MatchingColor(hexValue: "E6E6FA", name: "Lavender", redComponent: 230, greenComponent: 230, blueComponent: 250, hueComponent: 240, saturationComponent: 20, brightnessComponent: 250),
+    MatchingColor(hexValue: "CC8899", name: "Puce", redComponent: 204, greenComponent: 136, blueComponent: 153, hueComponent: -10, saturationComponent: 102, brightnessComponent: 170),
+    MatchingColor(hexValue: "D2B48C", name: "Tan", redComponent: 210, greenComponent: 180, blueComponent: 140, hueComponent: 24, saturationComponent: 111, brightnessComponent: 175),
+    MatchingColor(hexValue: "E0B0FF", name: "Mauve", redComponent: 224, greenComponent: 176, blueComponent: 255, hueComponent: 195, saturationComponent: 255, brightnessComponent: 215),
+    MatchingColor(hexValue: "F0E68C", name: "Khaki", redComponent: 240, greenComponent: 230, blueComponent: 140, hueComponent: 38, saturationComponent: 196, brightnessComponent: 190),
+    MatchingColor(hexValue: "F5F5DC", name: "Beige", redComponent: 245, greenComponent: 245, blueComponent: 220, hueComponent: 42, saturationComponent: 141, brightnessComponent: 232),
+    MatchingColor(hexValue: "FCD667", name: "Goldenrod", redComponent: 252, greenComponent: 214, blueComponent: 103, hueComponent: 31, saturationComponent: 245, brightnessComponent: 177),
+    MatchingColor(hexValue: "FF0000", name: "Red", redComponent: 255, greenComponent: 0, blueComponent: 0, hueComponent: 0, saturationComponent: 255, brightnessComponent: 127),
+    MatchingColor(hexValue: "FF681F", name: "Orange", redComponent: 255, greenComponent: 104, blueComponent: 31, hueComponent: 13, saturationComponent: 255, brightnessComponent: 143),
+    MatchingColor(hexValue: "FFC0CB", name: "Pink", redComponent: 255, greenComponent: 192, blueComponent: 203, hueComponent: -7, saturationComponent: 255, brightnessComponent: 223),
+    MatchingColor(hexValue: "FFD700", name: "Gold", redComponent: 255, greenComponent: 215, blueComponent: 0, hueComponent: 35, saturationComponent: 255, brightnessComponent: 127),
+    MatchingColor(hexValue: "FFE5B4", name: "Peach", redComponent: 255, greenComponent: 229, blueComponent: 180, hueComponent: 27, saturationComponent: 255, brightnessComponent: 217),
+    MatchingColor(hexValue: "FFFDD0", name: "Cream", redComponent: 255, greenComponent: 253, blueComponent: 208, hueComponent: 40, saturationComponent: 255, brightnessComponent: 231),
+    MatchingColor(hexValue: "FFFF00", name: "Yellow", redComponent: 255, greenComponent: 255, blueComponent: 0, hueComponent: 42, saturationComponent: 255, brightnessComponent: 127),
+    MatchingColor(hexValue: "FFFFFF", name: "White", redComponent: 255, greenComponent: 255, blueComponent: 255, hueComponent: 0, saturationComponent: 0, brightnessComponent: 255)*/
+/*
+     //MatchingColor(hexValue: "E97451", name: "Burnt Sienna", redComponent: 233, greenComponent: 116, blueComponent: 81, hueComponent: 9, saturationComponent: 197, brightnessComponent: 157),
     MatchingColor(hexValue: "000080", name: "Navy Blue", redComponent: 0, greenComponent: 0, blueComponent: 128, hueComponent: 170, saturationComponent: 255, brightnessComponent: 64),
     MatchingColor(hexValue: "0000C8", name: "Dark Blue", redComponent: 0, greenComponent: 0, blueComponent: 200, hueComponent: 170, saturationComponent: 255, brightnessComponent: 100),
-    MatchingColor(hexValue: "0000FF", name: "Blue", redComponent: 0, greenComponent: 0, blueComponent: 255, hueComponent: 170, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "003366", name: "Midnight Blue", redComponent: 0, greenComponent: 51, blueComponent: 102, hueComponent: 148, saturationComponent: 255, brightnessComponent: 51),
     MatchingColor(hexValue: "003532", name: "Deep Teal", redComponent: 0, greenComponent: 53, blueComponent: 50, hueComponent: 125, saturationComponent: 255, brightnessComponent: 26),
-    MatchingColor(hexValue: "0047AB", name: "Cobalt", redComponent: 0, greenComponent: 71, blueComponent: 171, hueComponent: 152, saturationComponent: 255, brightnessComponent: 85),
+    //MatchingColor(hexValue: "0047AB", name: "Cobalt", redComponent: 0, greenComponent: 71, blueComponent: 171, hueComponent: 152, saturationComponent: 255, brightnessComponent: 85),
     MatchingColor(hexValue: "007BA7", name: "Deep Cerulean", redComponent: 0, greenComponent: 123, blueComponent: 167, hueComponent: 138, saturationComponent: 255, brightnessComponent: 83),
-    MatchingColor(hexValue: "008080", name: "Teal", redComponent: 0, greenComponent: 128, blueComponent: 128, hueComponent: 127, saturationComponent: 255, brightnessComponent: 64),
     MatchingColor(hexValue: "00A86B", name: "Jade", redComponent: 0, greenComponent: 168, blueComponent: 107, hueComponent: 112, saturationComponent: 255, brightnessComponent: 84),
     MatchingColor(hexValue: "00CCCC", name: "Robin's Egg Blue", redComponent: 0, greenComponent: 204, blueComponent: 204, hueComponent: 127, saturationComponent: 255, brightnessComponent: 102),
-    MatchingColor(hexValue: "00FF00", name: "Green", redComponent: 0, greenComponent: 255, blueComponent: 0, hueComponent: 85, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "00FF7F", name: "Spring Green", redComponent: 0, greenComponent: 255, blueComponent: 127, hueComponent: 106, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "00FFFF", name: "Cyan", redComponent: 0, greenComponent: 255, blueComponent: 255, hueComponent: 127, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "01796F", name: "Pine Green", redComponent: 1, greenComponent: 121, blueComponent: 111, hueComponent: 123, saturationComponent: 250, brightnessComponent: 60),
     MatchingColor(hexValue: "02A4D3", name: "Cerulean", redComponent: 2, greenComponent: 164, blueComponent: 211, hueComponent: 137, saturationComponent: 250, brightnessComponent: 106),
     MatchingColor(hexValue: "044259", name: "Teal Blue", redComponent: 4, greenComponent: 66, blueComponent: 89, hueComponent: 139, saturationComponent: 233, brightnessComponent: 46),
-    MatchingColor(hexValue: "069B81", name: "Gossamer", redComponent: 6, greenComponent: 155, blueComponent: 129, hueComponent: 120, saturationComponent: 235, brightnessComponent: 80),
+    //MatchingColor(hexValue: "069B81", name: "Gossamer", redComponent: 6, greenComponent: 155, blueComponent: 129, hueComponent: 120, saturationComponent: 235, brightnessComponent: 80),
     MatchingColor(hexValue: "08E8DE", name: "Bright Turquoise", redComponent: 8, greenComponent: 232, blueComponent: 222, hueComponent: 125, saturationComponent: 238, brightnessComponent: 120),
-    MatchingColor(hexValue: "09230F", name: "Palm Green", redComponent: 9, greenComponent: 35, blueComponent: 15, hueComponent: 94, saturationComponent: 150, brightnessComponent: 22),
-    MatchingColor(hexValue: "0BDA51", name: "Malachite", redComponent: 11, greenComponent: 218, blueComponent: 81, hueComponent: 99, saturationComponent: 230, brightnessComponent: 114),
+    //MatchingColor(hexValue: "09230F", name: "Palm Green", redComponent: 9, greenComponent: 35, blueComponent: 15, hueComponent: 94, saturationComponent: 150, brightnessComponent: 22),
+    //MatchingColor(hexValue: "0BDA51", name: "Malachite", redComponent: 11, greenComponent: 218, blueComponent: 81, hueComponent: 99, saturationComponent: 230, brightnessComponent: 114),
     MatchingColor(hexValue: "0C0B1D", name: "Ebony", redComponent: 12, greenComponent: 11, blueComponent: 29, hueComponent: 172, saturationComponent: 114, brightnessComponent: 20),
     MatchingColor(hexValue: "120A8F", name: "Ultramarine", redComponent: 18, greenComponent: 10, blueComponent: 143, hueComponent: 172, saturationComponent: 221, brightnessComponent: 76),
     MatchingColor(hexValue: "161D10", name: "Hunter Green", redComponent: 22, greenComponent: 29, blueComponent: 16, hueComponent: 65, saturationComponent: 73, brightnessComponent: 22),
@@ -46,17 +133,17 @@ class ColorHelper
     MatchingColor(hexValue: "228B22", name: "Forest Green", redComponent: 34, greenComponent: 139, blueComponent: 34, hueComponent: 85, saturationComponent: 154, brightnessComponent: 86),
     MatchingColor(hexValue: "240A40", name: "Violet", redComponent: 36, greenComponent: 10, blueComponent: 64, hueComponent: 190, saturationComponent: 186, brightnessComponent: 36),
     MatchingColor(hexValue: "251607", name: "Graphite", redComponent: 37, greenComponent: 22, blueComponent: 7, hueComponent: 21, saturationComponent: 173, brightnessComponent: 22),
-    MatchingColor(hexValue: "2A52BE", name: "Cerulean Blue", redComponent: 42, greenComponent: 82, blueComponent: 190, hueComponent: 158, saturationComponent: 162, brightnessComponent: 116),
+    //MatchingColor(hexValue: "2A52BE", name: "Cerulean Blue", redComponent: 42, greenComponent: 82, blueComponent: 190, hueComponent: 158, saturationComponent: 162, brightnessComponent: 116),
     MatchingColor(hexValue: "2E8B57", name: "Sea Green", redComponent: 46, greenComponent: 139, blueComponent: 87, hueComponent: 103, saturationComponent: 128, brightnessComponent: 92),
-    MatchingColor(hexValue: "2F519E", name: "Sapphire", redComponent: 47, greenComponent: 81, blueComponent: 158, hueComponent: 156, saturationComponent: 138, brightnessComponent: 102),
+    //MatchingColor(hexValue: "2F519E", name: "Sapphire", redComponent: 47, greenComponent: 81, blueComponent: 158, hueComponent: 156, saturationComponent: 138, brightnessComponent: 102),
     MatchingColor(hexValue: "301F1E", name: "Cocoa Brown", redComponent: 48, greenComponent: 31, blueComponent: 30, hueComponent: 2, saturationComponent: 58, brightnessComponent: 39),
-    MatchingColor(hexValue: "315BA1", name: "Azure", redComponent: 49, greenComponent: 91, blueComponent: 161, hueComponent: 154, saturationComponent: 136, brightnessComponent: 105),
+    //MatchingColor(hexValue: "315BA1", name: "Azure", redComponent: 49, greenComponent: 91, blueComponent: 161, hueComponent: 154, saturationComponent: 136, brightnessComponent: 105),
     MatchingColor(hexValue: "32127A", name: "Persian Indigo", redComponent: 50, greenComponent: 18, blueComponent: 122, hueComponent: 183, saturationComponent: 189, brightnessComponent: 70),
     MatchingColor(hexValue: "370202", name: "Chocolate", redComponent: 55, greenComponent: 2, blueComponent: 2, hueComponent: 0, saturationComponent: 237, brightnessComponent: 28),
     MatchingColor(hexValue: "3B0910", name: "Aubergine", redComponent: 59, greenComponent: 9, blueComponent: 16, hueComponent: -5, saturationComponent: 187, brightnessComponent: 34),
     MatchingColor(hexValue: "3C2005", name: "Dark Ebony", redComponent: 60, greenComponent: 32, blueComponent: 5, hueComponent: 20, saturationComponent: 215, brightnessComponent: 32),
     MatchingColor(hexValue: "3C4151", name: "Bright Gray", redComponent: 60, greenComponent: 65, blueComponent: 81, hueComponent: 159, saturationComponent: 37, brightnessComponent: 70),
-    MatchingColor(hexValue: "3C4443", name: "Cape Cod", redComponent: 60, greenComponent: 68, blueComponent: 67, hueComponent: 122, saturationComponent: 15, brightnessComponent: 64),
+    //MatchingColor(hexValue: "3C4443", name: "Cape Cod", redComponent: 60, greenComponent: 68, blueComponent: 67, hueComponent: 122, saturationComponent: 15, brightnessComponent: 64),
     MatchingColor(hexValue: "3F2109", name: "Bronze", redComponent: 63, greenComponent: 33, blueComponent: 9, hueComponent: 18, saturationComponent: 191, brightnessComponent: 36),
     MatchingColor(hexValue: "40291D", name: "Cork", redComponent: 64, greenComponent: 41, blueComponent: 29, hueComponent: 14, saturationComponent: 95, brightnessComponent: 46),
     MatchingColor(hexValue: "4169E1", name: "Royal Blue", redComponent: 65, greenComponent: 105, blueComponent: 225, hueComponent: 159, saturationComponent: 185, brightnessComponent: 145),
@@ -74,7 +161,7 @@ class ColorHelper
     MatchingColor(hexValue: "4D400F", name: "Bronzetone", redComponent: 77, greenComponent: 64, blueComponent: 15, hueComponent: 33, saturationComponent: 171, brightnessComponent: 46),
     MatchingColor(hexValue: "4E0606", name: "Mahogany", redComponent: 78, greenComponent: 6, blueComponent: 6, hueComponent: 0, saturationComponent: 218, brightnessComponent: 42),
     MatchingColor(hexValue: "4E420C", name: "Bronze Olive", redComponent: 78, greenComponent: 66, blueComponent: 12, hueComponent: 34, saturationComponent: 187, brightnessComponent: 45),
-    MatchingColor(hexValue: "4F69C6", name: "Indigo", redComponent: 79, greenComponent: 105, blueComponent: 198, hueComponent: 160, saturationComponent: 130, brightnessComponent: 138),
+
     MatchingColor(hexValue: "50C878", name: "Emerald", redComponent: 80, greenComponent: 200, blueComponent: 120, hueComponent: 99, saturationComponent: 133, brightnessComponent: 140),
     MatchingColor(hexValue: "5D5E37", name: "Verdigris", redComponent: 93, greenComponent: 94, blueComponent: 55, hueComponent: 43, saturationComponent: 66, brightnessComponent: 74),
     MatchingColor(hexValue: "5F5F6E", name: "Mid Gray", redComponent: 95, greenComponent: 95, blueComponent: 110, hueComponent: 170, saturationComponent: 18, brightnessComponent: 102),
@@ -82,7 +169,6 @@ class ColorHelper
     MatchingColor(hexValue: "614051", name: "Eggplant", redComponent: 97, greenComponent: 64, blueComponent: 81, hueComponent: -21, saturationComponent: 52, brightnessComponent: 80),
     MatchingColor(hexValue: "6456B7", name: "Blue Violet", redComponent: 100, greenComponent: 86, blueComponent: 183, hueComponent: 176, saturationComponent: 102, brightnessComponent: 134),
     MatchingColor(hexValue: "6495ED", name: "Cornflower Blue", redComponent: 100, greenComponent: 149, blueComponent: 237, hueComponent: 154, saturationComponent: 201, brightnessComponent: 168),
-    MatchingColor(hexValue: "660099", name: "Purple", redComponent: 102, greenComponent: 0, blueComponent: 153, hueComponent: 198, saturationComponent: 255, brightnessComponent: 76),
     MatchingColor(hexValue: "661010", name: "Dark Tan", redComponent: 102, greenComponent: 16, blueComponent: 16, hueComponent: 0, saturationComponent: 185, brightnessComponent: 59),
     MatchingColor(hexValue: "66FF00", name: "Bright Green", redComponent: 102, greenComponent: 255, blueComponent: 0, hueComponent: 68, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "6B3FA0", name: "Royal Purple", redComponent: 107, greenComponent: 63, blueComponent: 160, hueComponent: 189, saturationComponent: 110, brightnessComponent: 111),
@@ -104,24 +190,20 @@ class ColorHelper
     MatchingColor(hexValue: "7C778A", name: "Topaz", redComponent: 124, greenComponent: 119, blueComponent: 138, hueComponent: 181, saturationComponent: 19, brightnessComponent: 128),
     MatchingColor(hexValue: "7FFF00", name: "Chartreuse", redComponent: 127, greenComponent: 255, blueComponent: 0, hueComponent: 63, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "7FFFD4", name: "Aquamarine", redComponent: 127, greenComponent: 255, blueComponent: 212, hueComponent: 113, saturationComponent: 255, brightnessComponent: 191),
-    MatchingColor(hexValue: "800000", name: "Maroon", redComponent: 128, greenComponent: 0, blueComponent: 0, hueComponent: 0, saturationComponent: 255, brightnessComponent: 64),
-    MatchingColor(hexValue: "803790", name: "Vivid Violet", redComponent: 128, greenComponent: 55, blueComponent: 144, hueComponent: 204, saturationComponent: 114, brightnessComponent: 99),
+    MatchingColor(hexValue: "9F00FF", name: "Vivid Violet", redComponent: 128, greenComponent: 55, blueComponent: 144, hueComponent: 204, saturationComponent: 114, brightnessComponent: 99),
     MatchingColor(hexValue: "80461B", name: "Russet", redComponent: 128, greenComponent: 70, blueComponent: 27, hueComponent: 18, saturationComponent: 166, brightnessComponent: 77),
-    MatchingColor(hexValue: "808000", name: "Olive", redComponent: 128, greenComponent: 128, blueComponent: 0, hueComponent: 42, saturationComponent: 255, brightnessComponent: 64),
-    MatchingColor(hexValue: "808080", name: "Gray", redComponent: 128, greenComponent: 128, blueComponent: 128, hueComponent: 0, saturationComponent: 0, brightnessComponent: 128),
     MatchingColor(hexValue: "828F72", name: "Battleship Gray", redComponent: 130, greenComponent: 143, blueComponent: 114, hueComponent: 61, saturationComponent: 29, brightnessComponent: 128),
     MatchingColor(hexValue: "831923", name: "Merlot", redComponent: 131, greenComponent: 25, blueComponent: 35, hueComponent: -4, saturationComponent: 173, brightnessComponent: 77),
     MatchingColor(hexValue: "843179", name: "Plum", redComponent: 132, greenComponent: 49, blueComponent: 121, hueComponent: -36, saturationComponent: 116, brightnessComponent: 90),
-    MatchingColor(hexValue: "888D65", name: "Avocado", redComponent: 136, greenComponent: 141, blueComponent: 101, hueComponent: 47, saturationComponent: 42, brightnessComponent: 121),
+//   Terribly-chosen name, it looks like a bad avocado:
+//     MatchingColor(hexValue: "888D65", name: "Avocado", redComponent: 136, greenComponent: 141, blueComponent: 101, hueComponent: 47, saturationComponent: 42, brightnessComponent: 121),
     MatchingColor(hexValue: "893843", name: "Solid Pink", redComponent: 137, greenComponent: 56, blueComponent: 67, hueComponent: -5, saturationComponent: 107, brightnessComponent: 96),
     MatchingColor(hexValue: "8A3324", name: "Burnt Umber", redComponent: 138, greenComponent: 51, blueComponent: 36, hueComponent: 6, saturationComponent: 149, brightnessComponent: 87),
     MatchingColor(hexValue: "8B00FF", name: "Electric Violet", redComponent: 139, greenComponent: 0, blueComponent: 255, hueComponent: 193, saturationComponent: 255, brightnessComponent: 127),
-    MatchingColor(hexValue: "900020", name: "Burgundy", redComponent: 144, greenComponent: 0, blueComponent: 32, hueComponent: -9, saturationComponent: 255, brightnessComponent: 72),
     MatchingColor(hexValue: "9370DB", name: "Medium Purple", redComponent: 147, greenComponent: 112, blueComponent: 219, hueComponent: 183, saturationComponent: 152, brightnessComponent: 165),
     MatchingColor(hexValue: "93CCEA", name: "Cornflower", redComponent: 147, greenComponent: 204, blueComponent: 234, hueComponent: 142, saturationComponent: 171, brightnessComponent: 190),
     MatchingColor(hexValue: "950015", name: "Scarlett", redComponent: 149, greenComponent: 0, blueComponent: 21, hueComponent: -5, saturationComponent: 255, brightnessComponent: 74),
     MatchingColor(hexValue: "960018", name: "Carmine", redComponent: 150, greenComponent: 0, blueComponent: 24, hueComponent: -6, saturationComponent: 255, brightnessComponent: 75),
-    MatchingColor(hexValue: "964B00", name: "Brown", redComponent: 150, greenComponent: 75, blueComponent: 0, hueComponent: 21, saturationComponent: 255, brightnessComponent: 75),
     MatchingColor(hexValue: "967BB6", name: "Lavender Purple", redComponent: 150, greenComponent: 123, blueComponent: 182, hueComponent: 189, saturationComponent: 73, brightnessComponent: 152),
     MatchingColor(hexValue: "96A8A1", name: "Pewter", redComponent: 150, greenComponent: 168, blueComponent: 161, hueComponent: 110, saturationComponent: 23, brightnessComponent: 159),
     MatchingColor(hexValue: "98FF98", name: "Mint Green", redComponent: 152, greenComponent: 255, blueComponent: 152, hueComponent: 85, saturationComponent: 255, brightnessComponent: 203),
@@ -143,7 +225,6 @@ class ColorHelper
     MatchingColor(hexValue: "B1610B", name: "Pumpkin Skin", redComponent: 177, greenComponent: 97, blueComponent: 11, hueComponent: 22, saturationComponent: 225, brightnessComponent: 93),
     MatchingColor(hexValue: "B35213", name: "Fiery Orange", redComponent: 179, greenComponent: 82, blueComponent: 19, hueComponent: 16, saturationComponent: 206, brightnessComponent: 98),
     MatchingColor(hexValue: "B3AF95", name: "Taupe Gray", redComponent: 179, greenComponent: 175, blueComponent: 149, hueComponent: 36, saturationComponent: 42, brightnessComponent: 163),
-    MatchingColor(hexValue: "B57EDC", name: "Lavender", redComponent: 181, greenComponent: 126, blueComponent: 220, hueComponent: 194, saturationComponent: 146, brightnessComponent: 173),
     MatchingColor(hexValue: "B5B35C", name: "Olive Green", redComponent: 181, greenComponent: 179, blueComponent: 92, hueComponent: 41, saturationComponent: 95, brightnessComponent: 136),
     MatchingColor(hexValue: "B7410E", name: "Rust", redComponent: 183, greenComponent: 65, blueComponent: 14, hueComponent: 12, saturationComponent: 218, brightnessComponent: 98),
     MatchingColor(hexValue: "B87333", name: "Copper", redComponent: 184, greenComponent: 115, blueComponent: 51, hueComponent: 20, saturationComponent: 144, brightnessComponent: 117),
@@ -151,9 +232,9 @@ class ColorHelper
     MatchingColor(hexValue: "B94E48", name: "Chestnut", redComponent: 185, greenComponent: 78, blueComponent: 72, hueComponent: 2, saturationComponent: 113, brightnessComponent: 128),
     MatchingColor(hexValue: "B98D28", name: "Marigold", redComponent: 185, greenComponent: 141, blueComponent: 40, hueComponent: 29, saturationComponent: 164, brightnessComponent: 112),
     MatchingColor(hexValue: "BB3385", name: "Medium Red Violet", redComponent: 187, greenComponent: 51, blueComponent: 133, hueComponent: -25, saturationComponent: 145, brightnessComponent: 119),
-    MatchingColor(hexValue: "BDBBD7", name: "Lavender Gray", redComponent: 189, greenComponent: 187, blueComponent: 215, hueComponent: 173, saturationComponent: 66, brightnessComponent: 201),
-    MatchingColor(hexValue: "BDBDC6", name: "French Gray", redComponent: 189, greenComponent: 189, blueComponent: 198, hueComponent: 170, saturationComponent: 18, brightnessComponent: 193),
-    MatchingColor(hexValue: "BEB5B7", name: "Pink Swan", redComponent: 190, greenComponent: 181, blueComponent: 183, hueComponent: -9, saturationComponent: 16, brightnessComponent: 185),
+    //MatchingColor(hexValue: "BDBBD7", name: "Lavender Gray", redComponent: 189, greenComponent: 187, blueComponent: 215, hueComponent: 173, saturationComponent: 66, brightnessComponent: 201),
+    //MatchingColor(hexValue: "BDBDC6", name: "French Gray", redComponent: 189, greenComponent: 189, blueComponent: 198, hueComponent: 170, saturationComponent: 18, brightnessComponent: 193),
+    //MatchingColor(hexValue: "BEB5B7", name: "Pink Swan", redComponent: 190, greenComponent: 181, blueComponent: 183, hueComponent: -9, saturationComponent: 16, brightnessComponent: 185),
     MatchingColor(hexValue: "BFFF00", name: "Lime", redComponent: 191, greenComponent: 255, blueComponent: 0, hueComponent: 53, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "C08081", name: "Old Rose", redComponent: 192, greenComponent: 128, blueComponent: 129, hueComponent: 0, saturationComponent: 85, brightnessComponent: 160),
     MatchingColor(hexValue: "C0C0C0", name: "Silver", redComponent: 192, greenComponent: 192, blueComponent: 192, hueComponent: 0, saturationComponent: 0, brightnessComponent: 192),
@@ -163,7 +244,7 @@ class ColorHelper
     MatchingColor(hexValue: "C32148", name: "Maroon Flush", redComponent: 195, greenComponent: 33, blueComponent: 72, hueComponent: -10, saturationComponent: 181, brightnessComponent: 113),
     MatchingColor(hexValue: "C3BFC1", name: "Pale Slate", redComponent: 195, greenComponent: 191, blueComponent: 193, hueComponent: -21, saturationComponent: 8, brightnessComponent: 193),
     MatchingColor(hexValue: "C3C3BD", name: "Gray Nickel", redComponent: 195, greenComponent: 195, blueComponent: 189, hueComponent: 42, saturationComponent: 12, brightnessComponent: 192),
-    MatchingColor(hexValue: "C3CDE6", name: "Periwinkle Gray", redComponent: 195, greenComponent: 205, blueComponent: 230, hueComponent: 157, saturationComponent: 105, brightnessComponent: 212),
+    //MatchingColor(hexValue: "C3CDE6", name: "Periwinkle Gray", redComponent: 195, greenComponent: 205, blueComponent: 230, hueComponent: 157, saturationComponent: 105, brightnessComponent: 212),
     MatchingColor(hexValue: "C41E3A", name: "Cardinal", redComponent: 196, greenComponent: 30, blueComponent: 58, hueComponent: -7, saturationComponent: 187, brightnessComponent: 113),
     MatchingColor(hexValue: "C4C4BC", name: "Mist Gray", redComponent: 196, greenComponent: 196, blueComponent: 188, hueComponent: 42, saturationComponent: 16, brightnessComponent: 192),
     MatchingColor(hexValue: "C5E17A", name: "Yellow Green", redComponent: 197, greenComponent: 225, blueComponent: 122, hueComponent: 54, saturationComponent: 161, brightnessComponent: 173),
@@ -173,31 +254,27 @@ class ColorHelper
     MatchingColor(hexValue: "C8A2C8", name: "Lilac", redComponent: 200, greenComponent: 162, blueComponent: 200, hueComponent: -42, saturationComponent: 65, brightnessComponent: 180),
     MatchingColor(hexValue: "CC5500", name: "Burnt Orange", redComponent: 204, greenComponent: 85, blueComponent: 0, hueComponent: 17, saturationComponent: 255, brightnessComponent: 102),
     MatchingColor(hexValue: "CC7722", name: "Ochre", redComponent: 204, greenComponent: 119, blueComponent: 34, hueComponent: 21, saturationComponent: 182, brightnessComponent: 119),
-    MatchingColor(hexValue: "CC8899", name: "Puce", redComponent: 204, greenComponent: 136, blueComponent: 153, hueComponent: -10, saturationComponent: 102, brightnessComponent: 170),
     MatchingColor(hexValue: "CCCCFF", name: "Periwinkle", redComponent: 204, greenComponent: 204, blueComponent: 255, hueComponent: 170, saturationComponent: 255, brightnessComponent: 229),
     MatchingColor(hexValue: "CCFF00", name: "Electric Lime", redComponent: 204, greenComponent: 255, blueComponent: 0, hueComponent: 50, saturationComponent: 255, brightnessComponent: 127),
-    MatchingColor(hexValue: "D2B48C", name: "Tan", redComponent: 210, greenComponent: 180, blueComponent: 140, hueComponent: 24, saturationComponent: 111, brightnessComponent: 175),
     MatchingColor(hexValue: "D3CBBA", name: "Sisal", redComponent: 211, greenComponent: 203, blueComponent: 186, hueComponent: 28, saturationComponent: 56, brightnessComponent: 198),
     MatchingColor(hexValue: "D4BF8D", name: "Straw", redComponent: 212, greenComponent: 191, blueComponent: 141, hueComponent: 29, saturationComponent: 115, brightnessComponent: 176),
     MatchingColor(hexValue: "D4D7D9", name: "Iron", redComponent: 212, greenComponent: 215, blueComponent: 217, hueComponent: 144, saturationComponent: 15, brightnessComponent: 214),
     MatchingColor(hexValue: "D69188", name: "My Pink", redComponent: 214, greenComponent: 145, blueComponent: 136, hueComponent: 4, saturationComponent: 124, brightnessComponent: 175),
-    MatchingColor(hexValue: "D7837F", name: "New York Pink", redComponent: 215, greenComponent: 131, blueComponent: 127, hueComponent: 1, saturationComponent: 133, brightnessComponent: 171),
+    //MatchingColor(hexValue: "D7837F", name: "New York Pink", redComponent: 215, greenComponent: 131, blueComponent: 127, hueComponent: 1, saturationComponent: 133, brightnessComponent: 171),
     MatchingColor(hexValue: "DB5079", name: "Cranberry", redComponent: 219, greenComponent: 80, blueComponent: 121, hueComponent: -12, saturationComponent: 167, brightnessComponent: 149),
     MatchingColor(hexValue: "DC143C", name: "Crimson", redComponent: 220, greenComponent: 20, blueComponent: 60, hueComponent: -8, saturationComponent: 212, brightnessComponent: 120),
-    MatchingColor(hexValue: "DEE5C0", name: "Beryl Green", redComponent: 222, greenComponent: 229, blueComponent: 192, hueComponent: 50, saturationComponent: 106, brightnessComponent: 210),
+    //MatchingColor(hexValue: "DEE5C0", name: "Beryl Green", redComponent: 222, greenComponent: 229, blueComponent: 192, hueComponent: 50, saturationComponent: 106, brightnessComponent: 210),
     MatchingColor(hexValue: "DFFF00", name: "Chartreuse Yellow", redComponent: 223, greenComponent: 255, blueComponent: 0, hueComponent: 47, saturationComponent: 255, brightnessComponent: 127),
-    MatchingColor(hexValue: "E0B0FF", name: "Mauve", redComponent: 224, greenComponent: 176, blueComponent: 255, hueComponent: 195, saturationComponent: 255, brightnessComponent: 215),
     MatchingColor(hexValue: "E0B974", name: "Harvest Gold", redComponent: 224, greenComponent: 185, blueComponent: 116, hueComponent: 27, saturationComponent: 162, brightnessComponent: 170),
     MatchingColor(hexValue: "E0FFFF", name: "Baby Blue", redComponent: 224, greenComponent: 255, blueComponent: 255, hueComponent: 127, saturationComponent: 255, brightnessComponent: 239),
     MatchingColor(hexValue: "E2725B", name: "Terracotta", redComponent: 226, greenComponent: 114, blueComponent: 91, hueComponent: 7, saturationComponent: 178, brightnessComponent: 158),
     MatchingColor(hexValue: "E3F5E1", name: "Peppermint", redComponent: 227, greenComponent: 245, blueComponent: 225, hueComponent: 80, saturationComponent: 127, brightnessComponent: 235),
-    MatchingColor(hexValue: "E6F8F3", name: "Off Green", redComponent: 230, greenComponent: 248, blueComponent: 243, hueComponent: 115, saturationComponent: 143, brightnessComponent: 239),
-    MatchingColor(hexValue: "E6FFE9", name: "Hint of Green", redComponent: 230, greenComponent: 255, blueComponent: 233, hueComponent: 90, saturationComponent: 254, brightnessComponent: 242),
+    //MatchingColor(hexValue: "E6F8F3", name: "Off Green", redComponent: 230, greenComponent: 248, blueComponent: 243, hueComponent: 115, saturationComponent: 143, brightnessComponent: 239),
+    //MatchingColor(hexValue: "E6FFE9", name: "Hint of Green", redComponent: 230, greenComponent: 255, blueComponent: 233, hueComponent: 90, saturationComponent: 254, brightnessComponent: 242),
     MatchingColor(hexValue: "E77200", name: "Mango Tango", redComponent: 231, greenComponent: 114, blueComponent: 0, hueComponent: 20, saturationComponent: 255, brightnessComponent: 115),
-    MatchingColor(hexValue: "E79F8C", name: "Tonys Pink", redComponent: 231, greenComponent: 159, blueComponent: 140, hueComponent: 8, saturationComponent: 166, brightnessComponent: 185),
+    //MatchingColor(hexValue: "E79F8C", name: "Tonys Pink", redComponent: 231, greenComponent: 159, blueComponent: 140, hueComponent: 8, saturationComponent: 166, brightnessComponent: 185),
     MatchingColor(hexValue: "E8EBE0", name: "Green White", redComponent: 232, greenComponent: 235, blueComponent: 224, hueComponent: 54, saturationComponent: 54, brightnessComponent: 229),
     MatchingColor(hexValue: "E96E00", name: "Clementine", redComponent: 233, greenComponent: 110, blueComponent: 0, hueComponent: 20, saturationComponent: 255, brightnessComponent: 116),
-    MatchingColor(hexValue: "E97451", name: "Burnt Sienna", redComponent: 233, greenComponent: 116, blueComponent: 81, hueComponent: 9, saturationComponent: 197, brightnessComponent: 157),
     MatchingColor(hexValue: "EB9373", name: "Apricot", redComponent: 235, greenComponent: 147, blueComponent: 115, hueComponent: 11, saturationComponent: 191, brightnessComponent: 175),
     MatchingColor(hexValue: "ED9121", name: "Carrot Orange", redComponent: 237, greenComponent: 145, blueComponent: 33, hueComponent: 23, saturationComponent: 216, brightnessComponent: 135),
     MatchingColor(hexValue: "EDC9AF", name: "Desert Sand", redComponent: 237, greenComponent: 201, blueComponent: 175, hueComponent: 17, saturationComponent: 161, brightnessComponent: 206),
@@ -207,23 +284,21 @@ class ColorHelper
     MatchingColor(hexValue: "EED9C4", name: "Almond", redComponent: 238, greenComponent: 217, blueComponent: 196, hueComponent: 21, saturationComponent: 140, brightnessComponent: 217),
     MatchingColor(hexValue: "EEDC82", name: "Flax", redComponent: 238, greenComponent: 220, blueComponent: 130, hueComponent: 35, saturationComponent: 193, brightnessComponent: 184),
     MatchingColor(hexValue: "EEFDFF", name: "Twilight Blue", redComponent: 238, greenComponent: 253, blueComponent: 255, hueComponent: 132, saturationComponent: 255, brightnessComponent: 246),
-    MatchingColor(hexValue: "EFF2F3", name: "Porcelain", redComponent: 239, greenComponent: 242, blueComponent: 243, hueComponent: 138, saturationComponent: 36, brightnessComponent: 241),
-    MatchingColor(hexValue: "F0E68C", name: "Khaki", redComponent: 240, greenComponent: 230, blueComponent: 140, hueComponent: 38, saturationComponent: 196, brightnessComponent: 190),
-    MatchingColor(hexValue: "F0EEFF", name: "Titian White", redComponent: 240, greenComponent: 238, blueComponent: 255, hueComponent: 174, saturationComponent: 255, brightnessComponent: 246),
-    MatchingColor(hexValue: "F1E9D2", name: "Parchment", redComponent: 241, greenComponent: 233, blueComponent: 210, hueComponent: 31, saturationComponent: 133, brightnessComponent: 225),
+    //MatchingColor(hexValue: "EFF2F3", name: "Porcelain", redComponent: 239, greenComponent: 242, blueComponent: 243, hueComponent: 138, saturationComponent: 36, brightnessComponent: 241),
+    //MatchingColor(hexValue: "F0EEFF", name: "Titian White", redComponent: 240, greenComponent: 238, blueComponent: 255, hueComponent: 174, saturationComponent: 255, brightnessComponent: 246),
+    //MatchingColor(hexValue: "F1E9D2", name: "Parchment", redComponent: 241, greenComponent: 233, blueComponent: 210, hueComponent: 31, saturationComponent: 133, brightnessComponent: 225),
     MatchingColor(hexValue: "F2552A", name: "Flamingo", redComponent: 242, greenComponent: 85, blueComponent: 42, hueComponent: 9, saturationComponent: 225, brightnessComponent: 142),
     MatchingColor(hexValue: "F28500", name: "Tangerine", redComponent: 242, greenComponent: 133, blueComponent: 0, hueComponent: 23, saturationComponent: 255, brightnessComponent: 121),
     MatchingColor(hexValue: "F34723", name: "Pomegranate", redComponent: 243, greenComponent: 71, blueComponent: 35, hueComponent: 7, saturationComponent: 228, brightnessComponent: 139),
-    MatchingColor(hexValue: "F3AD16", name: "Buttercup", redComponent: 243, greenComponent: 173, blueComponent: 22, hueComponent: 29, saturationComponent: 230, brightnessComponent: 132),
+    //MatchingColor(hexValue: "F3AD16", name: "Buttercup", redComponent: 243, greenComponent: 173, blueComponent: 22, hueComponent: 29, saturationComponent: 230, brightnessComponent: 132),
     MatchingColor(hexValue: "F3E9E5", name: "Dawn Pink", redComponent: 243, greenComponent: 233, blueComponent: 229, hueComponent: 12, saturationComponent: 93, brightnessComponent: 236),
-    MatchingColor(hexValue: "F3FB62", name: "Canary", redComponent: 243, greenComponent: 251, blueComponent: 98, hueComponent: 44, saturationComponent: 242, brightnessComponent: 174),
+    //MatchingColor(hexValue: "F3FB62", name: "Canary", redComponent: 243, greenComponent: 251, blueComponent: 98, hueComponent: 44, saturationComponent: 242, brightnessComponent: 174),
     MatchingColor(hexValue: "F4A460", name: "Sandy brown", redComponent: 244, greenComponent: 164, blueComponent: 96, hueComponent: 19, saturationComponent: 222, brightnessComponent: 170),
     MatchingColor(hexValue: "F4C430", name: "Saffron", redComponent: 244, greenComponent: 196, blueComponent: 48, hueComponent: 32, saturationComponent: 229, brightnessComponent: 146),
-    MatchingColor(hexValue: "F4D81C", name: "Ripe Lemon", redComponent: 244, greenComponent: 216, blueComponent: 28, hueComponent: 36, saturationComponent: 231, brightnessComponent: 136),
-    MatchingColor(hexValue: "F5F3E5", name: "Ecru White", redComponent: 245, greenComponent: 243, blueComponent: 229, hueComponent: 37, saturationComponent: 113, brightnessComponent: 237),
-    MatchingColor(hexValue: "F5F5DC", name: "Beige", redComponent: 245, greenComponent: 245, blueComponent: 220, hueComponent: 42, saturationComponent: 141, brightnessComponent: 232),
+    //MatchingColor(hexValue: "F4D81C", name: "Ripe Lemon", redComponent: 244, greenComponent: 216, blueComponent: 28, hueComponent: 36, saturationComponent: 231, brightnessComponent: 136),
+    //MatchingColor(hexValue: "F5F3E5", name: "Ecru White", redComponent: 245, greenComponent: 243, blueComponent: 229, hueComponent: 37, saturationComponent: 113, brightnessComponent: 237),
     MatchingColor(hexValue: "F7468A", name: "Violet Red", redComponent: 247, greenComponent: 70, blueComponent: 138, hueComponent: -16, saturationComponent: 233, brightnessComponent: 158),
-    MatchingColor(hexValue: "F8DD5C", name: "Energy Yellow", redComponent: 248, greenComponent: 221, blueComponent: 92, hueComponent: 35, saturationComponent: 234, brightnessComponent: 170),
+    //MatchingColor(hexValue: "F8DD5C", name: "Energy Yellow", redComponent: 248, greenComponent: 221, blueComponent: 92, hueComponent: 35, saturationComponent: 234, brightnessComponent: 170),
     MatchingColor(hexValue: "F95A61", name: "Carnation", redComponent: 249, greenComponent: 90, blueComponent: 97, hueComponent: -1, saturationComponent: 237, brightnessComponent: 169),
     MatchingColor(hexValue: "F9E0ED", name: "Carousel Pink", redComponent: 249, greenComponent: 224, blueComponent: 237, hueComponent: -22, saturationComponent: 172, brightnessComponent: 236),
     MatchingColor(hexValue: "F9E4BC", name: "Dairy Cream", redComponent: 249, greenComponent: 228, blueComponent: 188, hueComponent: 27, saturationComponent: 213, brightnessComponent: 218),
@@ -239,7 +314,6 @@ class ColorHelper
     MatchingColor(hexValue: "FBE870", name: "Marigold Yellow", redComponent: 251, greenComponent: 232, blueComponent: 112, hueComponent: 36, saturationComponent: 241, brightnessComponent: 181),
     MatchingColor(hexValue: "FC0FC0", name: "Shocking Pink", redComponent: 252, greenComponent: 15, blueComponent: 192, hueComponent: -31, saturationComponent: 248, brightnessComponent: 133),
     MatchingColor(hexValue: "FCC01E", name: "Lightning Yellow", redComponent: 252, greenComponent: 192, blueComponent: 30, hueComponent: 31, saturationComponent: 248, brightnessComponent: 141),
-    MatchingColor(hexValue: "FCD667", name: "Goldenrod", redComponent: 252, greenComponent: 214, blueComponent: 103, hueComponent: 31, saturationComponent: 245, brightnessComponent: 177),
     MatchingColor(hexValue: "FD9FA2", name: "Sweet Pink", redComponent: 253, greenComponent: 159, blueComponent: 162, hueComponent: -1, saturationComponent: 244, brightnessComponent: 206),
     MatchingColor(hexValue: "FDD5B1", name: "Light Apricot", redComponent: 253, greenComponent: 213, blueComponent: 177, hueComponent: 20, saturationComponent: 242, brightnessComponent: 215),
     MatchingColor(hexValue: "FDD7E4", name: "Pig Pink", redComponent: 253, greenComponent: 215, blueComponent: 228, hueComponent: -14, saturationComponent: 230, brightnessComponent: 234),
@@ -249,7 +323,6 @@ class ColorHelper
     MatchingColor(hexValue: "FED85D", name: "Dandelion", redComponent: 254, greenComponent: 216, blueComponent: 93, hueComponent: 32, saturationComponent: 251, brightnessComponent: 173),
     MatchingColor(hexValue: "FEF9E3", name: "Off Yellow", redComponent: 254, greenComponent: 249, blueComponent: 227, hueComponent: 34, saturationComponent: 237, brightnessComponent: 240),
     MatchingColor(hexValue: "FEFCED", name: "Orange White", redComponent: 254, greenComponent: 252, blueComponent: 237, hueComponent: 37, saturationComponent: 228, brightnessComponent: 245),
-    MatchingColor(hexValue: "FF0000", name: "Red", redComponent: 255, greenComponent: 0, blueComponent: 0, hueComponent: 0, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "FF007F", name: "Rose", redComponent: 255, greenComponent: 0, blueComponent: 127, hueComponent: -21, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "FF2400", name: "Scarlet", redComponent: 255, greenComponent: 36, blueComponent: 0, hueComponent: 6, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "FF3399", name: "Wild Strawberry", redComponent: 255, greenComponent: 51, blueComponent: 153, hueComponent: -21, saturationComponent: 255, brightnessComponent: 153),
@@ -259,7 +332,6 @@ class ColorHelper
     MatchingColor(hexValue: "FF4040", name: "Coral Red", redComponent: 255, greenComponent: 64, blueComponent: 64, hueComponent: 0, saturationComponent: 255, brightnessComponent: 159),
     MatchingColor(hexValue: "FF4D00", name: "Vermilion", redComponent: 255, greenComponent: 77, blueComponent: 0, hueComponent: 12, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "FF66FF", name: "Pink Flamingo", redComponent: 255, greenComponent: 102, blueComponent: 255, hueComponent: -42, saturationComponent: 254, brightnessComponent: 178),
-    MatchingColor(hexValue: "FF681F", name: "Orange", redComponent: 255, greenComponent: 104, blueComponent: 31, hueComponent: 13, saturationComponent: 255, brightnessComponent: 143),
     MatchingColor(hexValue: "FF69B4", name: "Hot Pink", redComponent: 255, greenComponent: 105, blueComponent: 180, hueComponent: -21, saturationComponent: 254, brightnessComponent: 179),
     MatchingColor(hexValue: "FF6FFF", name: "Blush Pink", redComponent: 255, greenComponent: 111, blueComponent: 255, hueComponent: -42, saturationComponent: 255, brightnessComponent: 183),
     MatchingColor(hexValue: "FF7518", name: "Pumpkin", redComponent: 255, greenComponent: 117, blueComponent: 24, hueComponent: 17, saturationComponent: 255, brightnessComponent: 139),
@@ -272,17 +344,14 @@ class ColorHelper
     MatchingColor(hexValue: "FFA6C9", name: "Carnation Pink", redComponent: 255, greenComponent: 166, blueComponent: 201, hueComponent: -16, saturationComponent: 254, brightnessComponent: 210),
     MatchingColor(hexValue: "FFAE42", name: "Yellow Orange", redComponent: 255, greenComponent: 174, blueComponent: 66, hueComponent: 24, saturationComponent: 255, brightnessComponent: 160),
     MatchingColor(hexValue: "FFBF00", name: "Amber", redComponent: 255, greenComponent: 191, blueComponent: 0, hueComponent: 31, saturationComponent: 255, brightnessComponent: 127),
-    MatchingColor(hexValue: "FFC0CB", name: "Pink", redComponent: 255, greenComponent: 192, blueComponent: 203, hueComponent: -7, saturationComponent: 255, brightnessComponent: 223),
     MatchingColor(hexValue: "FFC3C0", name: "Your Pink", redComponent: 255, greenComponent: 195, blueComponent: 192, hueComponent: 2, saturationComponent: 255, brightnessComponent: 223),
     MatchingColor(hexValue: "FFCC99", name: "Peach Orange", redComponent: 255, greenComponent: 204, blueComponent: 153, hueComponent: 21, saturationComponent: 255, brightnessComponent: 204),
     MatchingColor(hexValue: "FFCD8C", name: "Chardonnay", redComponent: 255, greenComponent: 205, blueComponent: 140, hueComponent: 24, saturationComponent: 255, brightnessComponent: 197),
-    MatchingColor(hexValue: "FFD700", name: "Gold", redComponent: 255, greenComponent: 215, blueComponent: 0, hueComponent: 35, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "FFD800", name: "School bus Yellow", redComponent: 255, greenComponent: 216, blueComponent: 0, hueComponent: 36, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "FFDB58", name: "Mustard", redComponent: 255, greenComponent: 219, blueComponent: 88, hueComponent: 33, saturationComponent: 255, brightnessComponent: 171),
     MatchingColor(hexValue: "FFDDAF", name: "Caramel", redComponent: 255, greenComponent: 221, blueComponent: 175, hueComponent: 24, saturationComponent: 255, brightnessComponent: 215),
     MatchingColor(hexValue: "FFDEAD", name: "Navajo White", redComponent: 255, greenComponent: 222, blueComponent: 173, hueComponent: 25, saturationComponent: 255, brightnessComponent: 214),
     MatchingColor(hexValue: "FFE5A0", name: "Cream Brulee", redComponent: 255, greenComponent: 229, blueComponent: 160, hueComponent: 30, saturationComponent: 255, brightnessComponent: 207),
-    MatchingColor(hexValue: "FFE5B4", name: "Peach", redComponent: 255, greenComponent: 229, blueComponent: 180, hueComponent: 27, saturationComponent: 255, brightnessComponent: 217),
     MatchingColor(hexValue: "FFD1DC", name: "Pastel Pink", redComponent: 255, greenComponent: 209, blueComponent: 220, hueComponent: -10, saturationComponent: 255, brightnessComponent: 232),
     MatchingColor(hexValue: "FFEDBC", name: "Colonial White", redComponent: 255, greenComponent: 237, blueComponent: 188, hueComponent: 31, saturationComponent: 255, brightnessComponent: 221),
     MatchingColor(hexValue: "FFEFEC", name: "Fair Pink", redComponent: 255, greenComponent: 239, blueComponent: 236, hueComponent: 6, saturationComponent: 255, brightnessComponent: 245),
@@ -295,37 +364,146 @@ class ColorHelper
     MatchingColor(hexValue: "FFFACD", name: "Lemon Chiffon", redComponent: 255, greenComponent: 250, blueComponent: 205, hueComponent: 38, saturationComponent: 255, brightnessComponent: 230),
     MatchingColor(hexValue: "FFFBF9", name: "Soapstone", redComponent: 255, greenComponent: 251, blueComponent: 249, hueComponent: 14, saturationComponent: 255, brightnessComponent: 252),
     MatchingColor(hexValue: "FFFCEA", name: "Buttery White", redComponent: 255, greenComponent: 252, blueComponent: 234, hueComponent: 36, saturationComponent: 254, brightnessComponent: 244),
-    MatchingColor(hexValue: "FFFDD0", name: "Cream", redComponent: 255, greenComponent: 253, blueComponent: 208, hueComponent: 40, saturationComponent: 255, brightnessComponent: 231),
     MatchingColor(hexValue: "FFFDE8", name: "Travertine", redComponent: 255, greenComponent: 253, blueComponent: 232, hueComponent: 38, saturationComponent: 254, brightnessComponent: 243),
-    MatchingColor(hexValue: "FFFF00", name: "Yellow", redComponent: 255, greenComponent: 255, blueComponent: 0, hueComponent: 42, saturationComponent: 255, brightnessComponent: 127),
     MatchingColor(hexValue: "FFFF66", name: "Laser Lemon", redComponent: 255, greenComponent: 255, blueComponent: 102, hueComponent: 42, saturationComponent: 254, brightnessComponent: 178),
     MatchingColor(hexValue: "FFFF99", name: "Pale Canary", redComponent: 255, greenComponent: 255, blueComponent: 153, hueComponent: 42, saturationComponent: 255, brightnessComponent: 204),
     
-    MatchingColor(hexValue: "FFFFF0", name: "Ivory", redComponent: 255, greenComponent: 255, blueComponent: 240, hueComponent: 42, saturationComponent: 255, brightnessComponent: 247),
-    MatchingColor(hexValue: "FFFFFF", name: "White", redComponent: 255, greenComponent: 255, blueComponent: 255, hueComponent: 0, saturationComponent: 0, brightnessComponent: 255)
+    MatchingColor(hexValue: "FFFFF0", name: "Ivory", redComponent: 255, greenComponent: 255, blueComponent: 240, hueComponent: 42, saturationComponent: 255, brightnessComponent: 247),*/
 ]
+    func printStuff() {
+        /*for mc in names
+        {
+            let xyz = rgbToXYZ(red255: mc.redComponent, green255: mc.greenComponent, blue255: mc.blueComponent)
+            let lab = xyzToLAB(x: xyz["X"]!!, y: xyz["Y"]!!, z: xyz["Z"]!!)
+            print("MatchingColor(hexValue: \"\(mc.hexValue)\", name: \"\(mc.name)\", redComponent: \(mc.redComponent), greenComponent: \(mc.greenComponent), blueComponent: \(mc.blueComponent), hueComponent: \(mc.hueComponent), saturationComponent: \(mc.saturationComponent), brightnessComponent: \(mc.brightnessComponent), lComponent: \(lab["L"]), aComponent: \(lab["a"]), bComponent: \(lab["b"])),");
+        }*/
+        /*for nc in newColors
+        {
+            let xyz = rgbToXYZ(red255: CGFloat(nc.value[0]), green255: CGFloat(nc.value[1]), blue255: CGFloat(nc.value[2]))
+            let lab = xyzToLAB(x: xyz["X"]!!, y: xyz["Y"]!!, z: xyz["Z"]!!)
+            
+            print("MatchingColor(hexValue: \"\", name: \"\(nc.key)\", redComponent: \(nc.value[0]), greenComponent: \(nc.value[1]), blueComponent: \(nc.value[2]), hueComponent: 0, saturationComponent: 0, brightnessComponent: 0, lComponent: \(lab["L"]), aComponent: \(lab["a"]), bComponent: \(lab["b"])),");
+        }*/
+    }
+    func rgbToXYZ(red255: CGFloat, green255: CGFloat, blue255: CGFloat) -> [String: CGFloat?]
+    {
+        var R = ( red255 / 255 )        //R from 0 to 255
+        var G = ( green255 / 255 )        //G from 0 to 255
+        var B = ( blue255 / 255 )        //B from 0 to 255
+        
+        if ( R > 0.04045 )
+        {
+            R = pow( ( ( R + 0.055 ) / 1.055 ), 2.4)
+        }
+        else
+        {
+            R = R / 12.92
+        }
+        if ( G > 0.04045 ) {
+            G = pow(( ( G + 0.055 ) / 1.055 ), 2.4)
+        }
+        else
+        {
+            G = G / 12.92
+        }
+        if ( B > 0.04045 ) {
+            B = pow(( ( B + 0.055 ) / 1.055 ),2.4)
+        }
+        else {
+            B = B / 12.92
+        }
+        
+        R = R * 100
+        G = G * 100
+        B = B * 100
+        
+        //Observer. = 2°, Illuminant = D65
+        let X = R * 0.4124 + G * 0.3576 + B * 0.1805
+        let Y = R * 0.2126 + G * 0.7152 + B * 0.0722
+        let Z = R * 0.0193 + G * 0.1192 + B * 0.9505
+        
+        return ["X":X, "Y":Y, "Z":Z]
+    }
+    
+    func xyzToLAB(x: CGFloat, y: CGFloat, z: CGFloat) -> [String: CGFloat?]
+    {
+        let ref_X : CGFloat  = 95.047
+        let ref_Y : CGFloat  = 100.000
+        let ref_Z : CGFloat = 108.883
+        
+        var var_X = x / ref_X          //ref_X =  95.047   Observer= 2°, Illuminant= D65
+        var var_Y = y / ref_Y          //ref_Y = 100.000
+        var var_Z = z / ref_Z          //ref_Z = 108.883
+        
+        if ( var_X > 0.008856 )
+        {
+            var_X = pow(var_X, ( 1/3 ) )
+        }
+        else {
+         var_X = ( 7.787 * var_X ) + ( 16 / 116 )
+        }
+        if ( var_Y > 0.008856 ) {
+            var_Y = pow(var_Y, ( 1/3 ))
+        }
+        else {
+            var_Y = ( 7.787 * var_Y ) + ( 16 / 116 )
+        }
+        if ( var_Z > 0.008856 ) {
+            var_Z = pow(var_Z, ( 1/3 ))
+        }
+        else {
+            var_Z = ( 7.787 * var_Z ) + ( 16 / 116 )
+        }
+        
+        let L = ( 116 * var_Y ) - 16
+        let a = 500 * ( var_X - var_Y )
+        let b = 200 * ( var_Y - var_Z )
+        return ["L": L, "a": a, "b": b]
+    }
+    
     func nameFor(color : UIColor) -> String
     {
-        let matchInfo = getColorInfo(color: color)
+        let matchTo = getColorInfo(color: color)
 
-        var ndf1 : CGFloat = 0
-        var ndf2 : CGFloat = 0
-        var ndf : CGFloat = 0
+        //var ndf1 : CGFloat = 0
+        //var ndf2 : CGFloat = 0
+        //var ndf : CGFloat = 0
         var cl : MatchingColor?
-        var df : CGFloat = -1
+        //var df : CGFloat = -1
+        
+        var nde: CGFloat = 0
+        var de: CGFloat = -1
         
         for (matchColor) in names
         {
-            ndf1 = CGFloat(pow(matchInfo.redComponent - matchColor.redComponent, 2)) + CGFloat(pow(matchInfo.greenComponent - matchColor.greenComponent, 2)) + CGFloat(pow(matchInfo.blueComponent - matchColor.blueComponent, 2))
-            ndf2 = CGFloat(pow(matchInfo.hueComponent - matchColor.hueComponent, 2))
-                + CGFloat(pow(matchInfo.saturationComponent - matchColor.saturationComponent, 2))
-                + CGFloat(pow(matchInfo.brightnessComponent - matchColor.brightnessComponent, 2))
-            ndf = ndf1 + ndf2 * 2;
-            if(df < 0 || df > ndf)
+            /*
+            ndf1 = CGFloat(
+                    pow(matchInfo.redComponent - matchColor.redComponent, 2)
+                  + pow(matchInfo.greenComponent - matchColor.greenComponent, 2)
+                  + pow(matchInfo.blueComponent - matchColor.blueComponent, 2)
+            )
+
+            ndf2 = CGFloat(
+                    pow(matchInfo.hueComponent - matchColor.hueComponent, 2)
+                  + pow(matchInfo.saturationComponent - matchColor.saturationComponent, 2)
+                  + pow(matchInfo.brightnessComponent - matchColor.brightnessComponent, 2)
+            )
+            ndf = ndf1 + ndf2;*/
+            
+            nde = deltaE(lab1: matchColor,lab2: matchTo)
+            
+            /*if(df < 0 || df > ndf)
             {
                 df = ndf;
                 cl = matchColor;
+            }*/
+            
+            if(de < 0 || de > nde)
+            {
+                de = nde;
+                cl = matchColor;
             }
+
         }
         
         return cl!.name
@@ -355,6 +533,25 @@ class ColorHelper
         cmyk.append(k.isNaN ? 0 : k)
         return cmyk
     }
+    
+    func deltaE (lab1 : MatchingColor, lab2 : MatchingColor) -> CGFloat
+    {
+        //CIE-L*1, CIE-a*1, CIE-b*1          //Color #1 CIE-L*ab values
+        //CIE-L*2, CIE-a*2, CIE-b*2          //Color #2 CIE-L*ab values
+        
+        let deltaE = sqrt(
+            (
+               pow( ( lab1.lComponent - lab2.lComponent ), 2)
+            )
+        + (
+            pow( ( lab1.aComponent - lab2.aComponent ), 2 )
+          )
+        + (
+            pow( ( lab1.bComponent - lab2.bComponent ), 2)
+          )
+        )
+        return deltaE;
+    }
 
     func getColorInfo(color : UIColor)->MatchingColor {
         
@@ -363,7 +560,7 @@ class ColorHelper
         var bright : CGFloat = 0
         var alpha : CGFloat = 0
         
-        color.getHue(&hue, saturation: &sat, brightness: &bright, alpha: &alpha) //.getRed(&rcRed, green: &rcGreen, blue: &rcBlue, alpha: &rcAlpha)
+        let hueSuccess = color.getHue(&hue, saturation: &sat, brightness: &bright, alpha: &alpha) //.getRed(&rcRed, green: &rcGreen, blue: &rcBlue, alpha: &rcAlpha)
         
         let colorPrivate = unsafeBitCast(color, to: UIColorPrivate.self)
         
@@ -380,37 +577,31 @@ class ColorHelper
         var strBlue = strRGB[2]
         strBlue = strBlue[strBlue.startIndex..<strBlue.index(strBlue.endIndex, offsetBy:-1)]
         
-        var fltRed = Float(strRed)
-        var fltGreen = Float(strGreen)
-        var fltBlue = Float(strBlue)
+        var preNormValues : [String:Float?] = ["red":Float(strRed),"grn":Float(strGreen),"blu":Float(strBlue),"hue":Float(hue*360),"sat":Float(sat*255.0),"brt":Float(bright*255.0)]
         
-        if (fltRed != nil && fltRed! > 255)
+        for value in preNormValues
         {
-            fltRed = 255;
-        }
-        if (fltGreen != nil && fltGreen! > 255)
-        {
-            fltGreen = 255;
-        }
-        if (fltBlue != nil && fltBlue! > 255)
-        {
-            fltBlue = 255;
-        }
-        
-        if (fltRed == nil || fltRed! < 0)
-        {
-            fltRed = 0;
-        }
-        if (fltGreen == nil || fltGreen! < 0)
-        {
-            fltGreen = 0;
-        }
-        if (fltBlue == nil || fltBlue! < 0)
-        {
-            fltBlue = 0;
+            if (value.value != nil && value.value! > 255 && value.key != "hue")
+            {
+                preNormValues[value.key] = 255
+//                value.value = 255;
+            }
+            else if (value.value != nil && value.value! > 360 && value.key == "hue")
+            {
+                preNormValues[value.key] = 360
+            }
+
+            if (value.value == nil || value.value! < 0)
+            {
+                preNormValues[value.key] = 0
+                //value.value = 0;
+            }
         }
         
-        let returnColor = MatchingColor(hexValue:"", name: "", redComponent:CGFloat(fltRed!), greenComponent: CGFloat(fltGreen!), blueComponent: CGFloat(fltBlue!), hueComponent: hue*255.0, saturationComponent: sat*255.0, brightnessComponent:bright*255.0)
+        let xyz = rgbToXYZ(red255: CGFloat(preNormValues["red"]!!), green255: CGFloat(preNormValues["grn"]!! ), blue255: CGFloat(preNormValues["blu"]!! ))
+        let lab = xyzToLAB(x: xyz["X"]!!, y: xyz["Y"]!!, z: xyz["Z"]!!)
+        
+        let returnColor = MatchingColor(hexValue:"", name: "", redComponent:CGFloat(preNormValues["red"]!! ), greenComponent: CGFloat(preNormValues["grn"]!!), blueComponent: CGFloat(preNormValues["blu"]!!), hueComponent: CGFloat(preNormValues["hue"]!!), saturationComponent: CGFloat(preNormValues["sat"]!!), brightnessComponent:CGFloat(preNormValues["brt"]!!), lComponent: lab["L"]!!, aComponent: lab["a"]!!, bComponent: lab["b"]!!)
 
         return returnColor
     }

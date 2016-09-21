@@ -19,4 +19,12 @@ struct MatchingColor
     var hueComponent : CGFloat = 0
     var saturationComponent : CGFloat = 0
     var brightnessComponent : CGFloat = 0
+    
+    //var xComponent : CGFloat = 0
+    //var yComponent : CGFloat = 0
+    //var zComponent : CGFloat = 0
+    
+    var lComponent: CGFloat = 0
+    var aComponent: CGFloat = 0
+    var bComponent: CGFloat = 0
 }

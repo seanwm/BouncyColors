@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3636CE51D917E64002DDE4E /* click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D3636CE41D917E64002DDE4E /* click.m4a */; };
+		D3636CE71D917FA5002DDE4E /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = D3636CE61D917FA5002DDE4E /* click.wav */; };
+		D3636CE91D91825F002DDE4E /* pew2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D3636CE81D91825F002DDE4E /* pew2.wav */; };
+		D3636CEB1D9182FF002DDE4E /* explode1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D3636CEA1D9182FF002DDE4E /* explode1.wav */; };
 		D365AF8F1D904FBA00DD0E0B /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365AF8E1D904FBA00DD0E0B /* ColorHelper.swift */; };
 		D365AF911D905AFC00DD0E0B /* MatchingColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365AF901D905AFC00DD0E0B /* MatchingColor.swift */; };
 		D37647011D7F37F000729553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37647001D7F37F000729553 /* AppDelegate.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D3636CE41D917E64002DDE4E /* click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.m4a; sourceTree = "<group>"; };
+		D3636CE61D917FA5002DDE4E /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
+		D3636CE81D91825F002DDE4E /* pew2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pew2.wav; sourceTree = "<group>"; };
+		D3636CEA1D9182FF002DDE4E /* explode1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explode1.wav; sourceTree = "<group>"; };
 		D365AF8E1D904FBA00DD0E0B /* ColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		D365AF901D905AFC00DD0E0B /* MatchingColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingColor.swift; sourceTree = "<group>"; };
 		D37646FD1D7F37F000729553 /* ColorMixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorMixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +70,10 @@
 		D37646FF1D7F37F000729553 /* ColorMixer */ = {
 			isa = PBXGroup;
 			children = (
+				D3636CE41D917E64002DDE4E /* click.m4a */,
+				D3636CE61D917FA5002DDE4E /* click.wav */,
+				D3636CEA1D9182FF002DDE4E /* explode1.wav */,
+				D3636CE81D91825F002DDE4E /* pew2.wav */,
 				D37647001D7F37F000729553 /* AppDelegate.swift */,
 				D37647021D7F37F000729553 /* ViewController.swift */,
 				D37647041D7F37F000729553 /* Main.storyboard */,
@@ -136,9 +148,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3636CE91D91825F002DDE4E /* pew2.wav in Resources */,
 				D376470B1D7F37F000729553 /* LaunchScreen.storyboard in Resources */,
 				D37647081D7F37F000729553 /* Assets.xcassets in Resources */,
+				D3636CE71D917FA5002DDE4E /* click.wav in Resources */,
+				D3636CEB1D9182FF002DDE4E /* explode1.wav in Resources */,
 				D37647061D7F37F000729553 /* Main.storyboard in Resources */,
+				D3636CE51D917E64002DDE4E /* click.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
